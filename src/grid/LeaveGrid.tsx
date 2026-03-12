@@ -8,28 +8,27 @@ import { profitOf, marginOf, statusOf } from "../utils/reportLogic";
 import { ChipsRenderer } from "./ChipsRenderer";
 import { CalculationRenderer } from "./CalculationRenderer";
 import { numberValueSetter } from "./valueSetters";
+import { isE2EEnv } from "../utils/env";
 
-const isE2E = import.meta.env.VITE_E2E === "true";
+const isE2E = isE2EEnv();
 
 export function LeaveGrid() {
-  const [rowData] = useState<Row[]>(() => generateRows(10000, 2026));
+  const [rowData] = useState<Row[]>(() => generateRows(20000, 2026));
   const apiRef = useRef<GridApi | null>(null);
-
-  console.log("rowData length:", rowData.length);
 
   const columnDefs = useMemo<ColDef<Row>[]>(() => {
     return [
       { field: "id", headerName: "ID", width: 90, sortable: true },
       {
-        field: "employeeName",
-        headerName: "Employee",
-        minWidth: 180,
+        field: "productName",
+        headerName: "Product",
+        minWidth: 220,
         sortable: true,
       },
       {
-        field: "department",
-        headerName: "Department",
-        minWidth: 140,
+        field: "category",
+        headerName: "Category",
+        minWidth: 160,
         cellRenderer: ChipsRenderer,
         sortable: true,
       },
