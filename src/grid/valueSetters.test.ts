@@ -5,8 +5,8 @@ describe("numberValueSetter", () => {
   test("updates numeric field and returns true", () => {
     const row: Row = {
       id: "1",
-      employeeName: "E1",
-      department: "Engineering",
+      productName: "Nova Desk 1",
+      category: "SaaS",
       isActive: true,
       revenue: 100,
       cost: 50,

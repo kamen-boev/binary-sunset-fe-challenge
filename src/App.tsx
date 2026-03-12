@@ -8,7 +8,7 @@ export default function App() {
       <p style={{ margin: "0 0 12px 0" }}>
         Edit <b>Revenue</b> or <b>Cost</b> to see <b>Profit</b>, <b>Margin</b>,
         and the <b>Status</b> chip update in real time. Scroll to test
-        virtualization (10,000 rows).
+        virtualization (20,000 rows).
       </p>
       <LeaveGrid />
     </div>

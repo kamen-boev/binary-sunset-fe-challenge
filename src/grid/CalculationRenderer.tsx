@@ -4,7 +4,6 @@ import type { ICellRendererParams } from "ag-grid-community";
 type Props = ICellRendererParams<any, number>;
 
 function formatNumber(n: number) {
-  // keep it fast; no Intl for every cell (can be heavy at 10k)
   return Number.isFinite(n) ? n.toFixed(2) : "";
 }
 
